@@ -1,0 +1,16 @@
+{
+  "name": "teste",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "testar:tudo": "node --test atividades/test.js",
+    "testar:01": "node --test atividades/atividade1/test.js",
+    "testar:02": "node --test atividades/atividade2/test.js",
+    "testar:03": "node --test atividades/atividade3/test.js",
+    "resumo": "node scripts/resumo.js"
+  }
+}
