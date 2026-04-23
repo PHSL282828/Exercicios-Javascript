@@ -7,10 +7,9 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "testar:tudo": "node --test atividades/test.js",
-    "testar:01": "node --test atividades/atividade1/test.js",
-    "testar:02": "node --test atividades/atividade2/test.js",
-    "testar:03": "node --test atividades/atividade3/test.js",
+    "testar:01": "node --test atividades/1-introducao-variaveis/facil/test.js",
+    "testar:02": "node --test atividades/introducao-variaveis/medio/test.js",
+    "testar:03": "node --test atividades/introducao-variaveis/dificil/test.js",
     "resumo": "node scripts/resumo.js"
   }
 }
