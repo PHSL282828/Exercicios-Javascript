@@ -1,5 +1,5 @@
 /**
- * Exercício: Saudações formatadas
+ * Exercício 1 : Saudações formatadas
  * Implemente a função greet(nome, idade) que retorna:
  * "Olá, <nome>! Você tem <idade> anos."
  *

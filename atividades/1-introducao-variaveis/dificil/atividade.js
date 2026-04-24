@@ -1,5 +1,5 @@
 /**
- * Exercício: Normalizador de cadastro
+ * Exercício 3: Normalizador de cadastro
  * Recebe um objeto parcial { name?, email?, age? } e retorna um NOVO objeto:
  * - name: trim + capitalize de cada palavra; se vazio/ausente -> null
  * - email: trim + lowercase; se vazio/ausente -> null

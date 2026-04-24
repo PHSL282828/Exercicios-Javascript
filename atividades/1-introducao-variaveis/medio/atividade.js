@@ -1,5 +1,5 @@
 /**
- * Exercício: Conversor de temperaturas
+ * Exercício 2 : Conversor de temperaturas
  * Implemente as funções abaixo retornando number com 2 casas decimais.
  * Entrada pode ser string ou number; se inválida, lance TypeError.
  */
