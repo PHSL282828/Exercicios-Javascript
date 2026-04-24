@@ -1,7 +1,7 @@
 /**
  * Exercício 5 (médio): Flatten nível 1
  *
- * Implemente e **exporte** flatten1(arr) que achata **um único nível** de array.
+ * Implemente e flatten1(arr) que achata **um único nível** de array.
  *
  * Exemplos:
  *  [1, [2, 3], [4]] -> [1, 2, 3, 4]
@@ -18,6 +18,8 @@
  *
  */
 
-export function flatten1(arr) {
+ function flatten1(arr) {
   // FAÇA AQUI
 }
+
+module.exports={flatten1}

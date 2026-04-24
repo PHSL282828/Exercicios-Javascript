@@ -1,7 +1,7 @@
 /**
  * Exercício 4(fácil): Soma de array
  *
- * Implemente e **exporte** sumArray(nums) que soma apenas **números válidos**.
+ * Implemente e  sumArray(nums) que soma apenas **números válidos**.
  *
  * Regras:
  * - Recebe um array com todos os numeros

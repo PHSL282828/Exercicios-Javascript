@@ -4,7 +4,7 @@ const assert = require('node:assert/strict');
 const { fizzbuzz } = require('./atividade');//caminho da atividade a ser corrigida por esse arquivo em especifico
 //const{funçãoDeResposta} = require(./arquivoDaResposta)
 
-test('atividade 06 - introdução a variaveis (DIFÍCIL)', async (t) => {
+test('atividade 06 - loopings (DIFICIL)', async (t) => {
   await t.test('a=1,b=5', () => {
     assert.deepStrictEqual(fizzbuzz(1,5), [1,2,"Fizz",4,"Buzz"]);
   });

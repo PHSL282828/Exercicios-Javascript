@@ -24,7 +24,7 @@
  *
  */
 
-export function fizzbuzz(a, b) {
+function fizzbuzz(a, b) {
   // TODO: implemente
 }
 
