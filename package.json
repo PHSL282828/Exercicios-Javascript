@@ -1,0 +1,38 @@
+{
+  "name": "teste",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "testar:01": "node --test atividades/1-introducao-variaveis/facil/test.js",
+    "testar:02": "node --test atividades/1-introducao-variaveis/medio/test.js",
+    "testar:03": "node --test atividades/1-introducao-variaveis/dificil/test.js",
+    "testar:04": "node --test atividades/2-condicionais/facil/test.js",
+    "testar:05": "node --test atividades/2-condicionais/medio/test.js",
+    "testar:06": "node --test atividades/2-condicionais/dificil/test.js",
+    "testar:07": "node --test atividades/3-loopings/facil/test.js",
+    "testar:08": "node --test atividades/3-loopings/medio/test.js",
+    "testar:09": "node --test atividades/3-loopings/dificil/test.js",
+    "testar:10": "node --test atividades/4-arrays/facil/test.js",
+    "testar:11": "node --test atividades/4-arrays/medio/test.js",
+    "testar:12": "node --test atividades/4-arrays/dificil/test.js",
+    "testar:13": "node --test atividades/5-operadores/facil/test.js",
+    "testar:14": "node --test atividades/5-operadores/medio/test.js",
+    "testar:15": "node --test atividades/5-operadores/dificil/test.js",
+    "testar:16": "node --test atividades/6-funcoes/facil/test.js",
+    "testar:17": "node --test atividades/6-funcoes/medio/test.js",
+    "testar:18": "node --test atividades/6-funcoes/dificil/test.js",
+    "testar:19": "node --test atividades/7-strings/facil/test.js",
+    "testar:20": "node --test atividades/7-strings/medio/test.js",
+    "testar:21": "node --test atividades/7-strings/dificil/test.js",
+    "testar:22": "node --test atividades/8-objetos/facil/test.js",
+    "testar:23": "node --test atividades/8-objetos/medio/test.js",
+    "testar:24": "node --test atividades/8-objetos/dificil/test.js",
+
+
+    "resumo": "node scripts/resumo.js"
+  }
+}
