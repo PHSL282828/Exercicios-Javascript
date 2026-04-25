@@ -1,0 +1,17 @@
+/**
+ * Exercício 13 (fácil): Calculadora básica
+ *
+ * Implemente e **exporte** calc(a, b, op) onde `op` ∈ "+", "-", "*", "/".
+ * Regras:
+ * - Converta `a` e `b` com Number(...); se virar NaN, lance TypeError.
+ * - Se `op === "/" && b === 0`, retorne null (não lance erro).
+ * - Para as quatro operações, retorne um **number** com o resultado.
+ *
+ * quando `a` ou `b` não forem numéricos lançe TypeError
+ */
+
+function calc(a, b, op) {
+  //FAÇA AQUI
+}
+
+module.exports={calc}
