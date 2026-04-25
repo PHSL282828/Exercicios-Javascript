@@ -4,63 +4,85 @@ const { spawnSync } = require('node:child_process');
 
 const pastaAtividades = path.resolve(__dirname, '../atividades');
 
-const atividades = fs
+const ordemDificuldade = ['facil', 'medio', 'dificil'];
+
+const blocos = fs
   .readdirSync(pastaAtividades, { withFileTypes: true })
-  //pega apenas pastas que tem arquivos dentro
-  .filter((item) => item.isDirectory());
-  //le todas as pastas dentro do diretorio atividades e pega o nome delas
+  .filter((item) => item.isDirectory())
+  .sort((a, b) => a.name.localeCompare(b.name));
 
 let passaram = 0;
 let falharam = 0;
+let total = 0;
 
 console.log('===== INICIANDO CORREÇÃO =====\n');
 
-for (const atividade of atividades) {
-  const nomeAtividade = atividade.name;
-  const caminhoTeste = path.join(pastaAtividades, nomeAtividade, 'test.js');
-  //cria o caminho completo dos arquivos de teste com base nos pedaços montados antes 
+for (const bloco of blocos) {
+  const nomeBloco = bloco.name;
+  const caminhoBloco = path.join(pastaAtividades, nomeBloco);
 
-  if (!fs.existsSync(caminhoTeste)) {
-    console.log(`${nomeAtividade} sem arquivo teste.js`);
-    falharam++;
-    continue;
-  }
-  //caça todos os arquivos de nome test.js e executa eles, assim fazendo o teste em si funcionar
+  const exercicios = fs
+    .readdirSync(caminhoBloco, { withFileTypes: true })
+    .filter((item) => item.isDirectory())
+    .sort((a, b) => {
+      const ia = ordemDificuldade.indexOf(a.name.toLowerCase());
+      const ib = ordemDificuldade.indexOf(b.name.toLowerCase());
 
-  const resultado = spawnSync('node', ['--test', caminhoTeste], {
-    encoding: 'utf-8'
-  });
-  //guarda o resultado dos testes sequenciais
-  
-  //a correção acontece verificando os valores que retornam de cada teste
-  //se fizer cada teste unitario, da pra ver que eles retornam um objeto
-  //so analisar os status desse objeto que da tudo certo
+      const valorA = ia === -1 ? Number.MAX_SAFE_INTEGER : ia;
+      const valorB = ib === -1 ? Number.MAX_SAFE_INTEGER : ib;
 
-  if (resultado.status === 0) {
-    console.log(`${nomeAtividade} passou`);
-    passaram++;
-  } else {
-    console.log(`${nomeAtividade} falhou`);
-    falharam++;
+      if (valorA !== valorB) {
+        return valorA - valorB;
+      }
 
-    if (resultado.stdout) {
-      console.log('--- saída do teste ---');
-      console.log(resultado.stdout.trim());
+      return a.name.localeCompare(b.name);
+    });
+
+  console.log(`--- ${nomeBloco} ---`);
+
+  for (const exercicio of exercicios) {
+    const nomeExercicio = exercicio.name;
+    const caminhoExercicio = path.join(caminhoBloco, nomeExercicio);
+    const caminhoTeste = path.join(caminhoExercicio, 'test.js');
+
+    total++;
+
+    if (!fs.existsSync(caminhoTeste)) {
+      console.log(`${nomeBloco}/${nomeExercicio} sem arquivo test.js`);
+      falharam++;
+      continue;
     }
 
-    if (resultado.stderr) {
-      console.log('--- erros ---');
-      console.log(resultado.stderr.trim());
-    }
-  }
+    const resultado = spawnSync('node', ['--test', caminhoTeste], {
+      encoding: 'utf-8'
+    });
 
-  console.log('');
+    if (resultado.status === 0) {
+      console.log(`${nomeBloco}/${nomeExercicio} passou`);
+      passaram++;
+    } else {
+      console.log(`${nomeBloco}/${nomeExercicio} falhou`);
+      falharam++;
+
+      if (resultado.stdout) {
+        console.log('--- saída do teste ---');
+        console.log(resultado.stdout.trim());
+      }
+
+      if (resultado.stderr) {
+        console.log('--- erros ---');
+        console.log(resultado.stderr.trim());
+      }
+    }
+
+    console.log('');
+  }
 }
 
 console.log('===== RESUMO FINAL =====');
 console.log(`Passaram: ${passaram}`);
 console.log(`Falharam: ${falharam}`);
-console.log(`Total: ${atividades.length}`);
+console.log(`Total: ${total}`);
 
 if (falharam > 0) {
   process.exit(1);
