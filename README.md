@@ -32,7 +32,7 @@ Uma vez isso feito, voce estará pronto para começar a fazer os exercicios.
 ## Fazendo os exercicios
 
 Primeiramente, todos os exercicios estão na pasta de atividades, e dentro de cada pasta de tópico haverá três exercicios, um facil, um medio e um dificil.
-Você deve apenas editar o arquivo de atividade.js e apenas nos locai especificados, cada exercicio tem um numero associado que está na primeira linha de cada exercicio.
+Você deve apenas editar o arquivo de atividade.js e apenas nos locais especificados, cada exercicio tem um numero associado que está na primeira linha de cada exercicio.
 
 ### Testando as respostas
 
