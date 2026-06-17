@@ -14,7 +14,7 @@
  *
  */
 
-export function energyBill(kwh) {
+function energyBill(kwh) {
   // FAÇA AQUI
 }
 

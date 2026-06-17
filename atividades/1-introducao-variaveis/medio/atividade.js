@@ -21,5 +21,4 @@ function toFahrenheit(c) {
   // FAÇA AQUI
 }
 
-module.exports={toCelsius};
-module.exports={toFahrenheit};
+module.exports={toCelsius, toFahrenheit};

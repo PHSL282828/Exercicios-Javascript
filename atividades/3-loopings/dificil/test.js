@@ -10,11 +10,11 @@ test('atividade 06 - loopings (DIFICIL)', async (t) => {
   });
 
   await t.test('a=1,b=15', () => {
-    assert.deepStrictEqual(fizzbuzz(1,"5"), [1,2,"Fizz",4,"Buzz","Fizz",7,8,"Fizz","Buzz",11,"Fizz",13,14,"FizzBuzz"]);
+    assert.deepStrictEqual(fizzbuzz(1,"15"), [1,2,"Fizz",4,"Buzz","Fizz",7,8,"Fizz","Buzz",11,"Fizz",13,14,"FizzBuzz"]);
   });
 
   await t.test('a=15,b=10', () => {
-    assert.deepStrictEqual(fizzbuzz(1,5), ["FizzBuzz",16,17,"Fizz", 19, "Buzz"]);
+    assert.deepStrictEqual(fizzbuzz(15,10), ["FizzBuzz",16,17,"Fizz", 19, "Buzz"]);
   });
 
   await t.test('a=6,b=12', () => {
@@ -26,15 +26,15 @@ test('atividade 06 - loopings (DIFICIL)', async (t) => {
   });
 
    await t.test('a=40,b=30', () => {
-    assert.throws(fizzbuzz(20,1), RangeError);
+    assert.throws(fizzbuzz(40,30), RangeError);
   });
 
   await t.test('a=asasas, b=0', () => {
-    assert.throws(fizzbuzz(asasas,0), TypeError);
+    assert.throws(fizzbuzz("asasas",0), TypeError);
   });
 
   await t.test('a=aiajs, b=alsal', () => {
-    assert.throws(fizzbuzz(aiajs,alsal), TypeError);
+    assert.throws(fizzbuzz("aiajs","alsal"), TypeError);
   });
 
 

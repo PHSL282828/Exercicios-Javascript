@@ -22,11 +22,11 @@ test('atividade 04 - loopings (facil)', async (t) => {
   });
 
   await t.test('[abab,abab,abab]', () => {
-    assert.equal(sumArray([abab, abab,abab]), 0 );
+    assert.equal(sumArray(["abab", "abab","abab"]), 0 );
   });
 
     await t.test('[1, a, x]', () => {
-    assert.equal(sumArray([1,a,x]), 1 );
+    assert.equal(sumArray([1,"a","x"]), 1 );
   });
 
   
