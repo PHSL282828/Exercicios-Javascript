@@ -14,7 +14,7 @@ test('atividade 4 - condicional (facil)', async (t) => {
   });
 
   await t.test('10', () => {
-    assert.equal(classifyAge(80), "crianca");
+    assert.equal(classifyAge(10), "crianca");
   });
 
   await t.test('13', () => {
@@ -22,11 +22,11 @@ test('atividade 4 - condicional (facil)', async (t) => {
   });
 
   await t.test('21', () => {
-    assert.equal(classifyAge("80"), "adulto");
+    assert.equal(classifyAge("21"), "adulto");
   });
 
   await t.test('aaaa', () => {
-    assert.throws(classifyAge(aaaa), TypeError);
+    assert.throws(classifyAge("aaaa"), TypeError);
   });
 
 

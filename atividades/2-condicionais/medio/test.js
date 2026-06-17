@@ -13,10 +13,6 @@ test('atividade 5 - condicional (médio)', async (t) => {
     assert.equal(energyBill(51),25.50 );
   });
 
-  await t.test('100', () => {
-    assert.equal(energyBill("110"),50.00 );
-  });
-
   await t.test('110', () => {
     assert.equal(energyBill("110"),55.00 );
   });
@@ -26,7 +22,7 @@ test('atividade 5 - condicional (médio)', async (t) => {
   });
 
   await t.test('aa', () => {
-    assert.throws(energyBill(aa),TypeError );
+    assert.throws(()=>energyBill("aa"),TypeError );
   });
 
   await t.test('250', () => {
